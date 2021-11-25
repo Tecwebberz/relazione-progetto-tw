@@ -1,0 +1,64 @@
+# COntentuto e progettazione standard
+
+- Mobile 1st motivazioni:
+  * Approccio standard attuale +50% desipositivi è Mobile
+  * Ci aiuta a rendere il contenuto sintetico cosa fondamentale in un
+    sito dedicato a trovare informazioni rapidamente
+  * I siti di UniPD sono poco visitabili da telefono
+  * Pagine dedicate a mense ed aule studio sono fruite quasi solo da mobile
+    (al volo)
+- HTML5, non ci sono ragioni per rimanere sullo standard precedente non ci
+  servono feature mancanti
+- Utenza target e implicazioni:
+  * L'utenza è principalmente studenti (e persone interessate al corso di
+    laurea) *NB* da rivedere quello tra parentesi, sicuramente più
+    interessante per chi è già iscritto. [Forte dipendenza dall' impostazione
+    delle recensioni] [Alcune funzionalità possono interessare cdl vicini].
+  * Di conseguenza possiamo aspettarci sistemi aggiornati.
+- Contenuti:
+  * Sezione info e recensioni corsi:
+    - Pagina in cui sono listati i corsi separati per anno, semestre e
+      triennale/magistrale. (valutate che non sappiamo una sega della
+      magistrale)
+    - Una breve introduzione alle info che si trovano in questa pagina
+    - Magari link alle faq su piano di studio
+    - Ogni corso ha una breve descrizione aggiunta da i webmaster
+      * Nome
+      * Prof corrente
+      * CFU
+      * Info su anni precedenti (es cambio CFU)
+    - Recensioni scritte da utenti per ogni corso (controllo parole brtt)
+    - Permettere filtraggio per anno
+    - Valutare se le pagine sono generate dinamicamente
+  * Sezione info e recensioni aule studio:
+    - Molto simile alla cosa delle recensioni corsi
+    - Cambiano solo le info statiche
+      * Orario
+      * Nome
+      * Breve descrizione
+    - Orario controllato direttamente nella pagina [valutare]
+  * Recensioni locali [valutare se abbiamo tempo]
+    - Solita storia delle info aule
+  * FAQ [tutto statico]:
+    - Piano di studio
+    - Tesi
+    - Stage
+    - La roba del badge per le porte
+    - Eduroam
+    - Password lab
+- Utenti (app):
+  * Utente normale:
+    - Creare commenti a aule studio e corsi
+    - Eliminare/Editare i propri commenti
+  * Utente admin:
+    - Come utente normale
+    - Elimina tutti i commenti
+    - Se gestire corsi e aule in modo dinamico editare il contenuto
+
+
+# Stile
+- Colori di dipartimento vedere soprattutto sito accessibili stage gaggy
+  linkto: https://web.math.unipd.it/accessibility/index.html
+
+# Dom gaggy
+- Testo inserito dinamicamente e hint sul linguaggio
