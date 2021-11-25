@@ -14,7 +14,7 @@
     laurea) *NB* da rivedere quello tra parentesi, sicuramente più
     interessante per chi è già iscritto. [Forte dipendenza dall' impostazione
     delle recensioni] [Alcune funzionalità possono interessare cdl vicini].
-  * Di conseguenza possiamo aspettarci sistemi aggiornati.
+  * Di conseguenza possiamo aspettarci sistemi aggiornati. Perchè solitamente lo usano gli studenti di informatica
 - Contenuti:
   * Sezione info e recensioni corsi:
     - Pagina in cui sono listati i corsi separati per anno, semestre e
