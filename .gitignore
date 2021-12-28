@@ -7,3 +7,4 @@
 *.gz
 *.toc
 src_latex/main.pdf
+*.xdv
