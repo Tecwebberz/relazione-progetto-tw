@@ -51,4 +51,14 @@ Tutto lo sviluppo del sito si è svolto tenendo a mente le raccomandazioni dello
 Abbiamo inoltre testato il tutto numerose volte ed in numerose occasioni tramite Lighthouse, software di google fornito all'interno di Google Chrome.
 
 \subsubsection{Separazione tra contenuto, presentazione e struttura}
-La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio le possibili categorie di accesso effettuate dai vari utenti. La parte di contenuto è stata strutturata 
+La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio le possibili categorie di accesso effettuate dai vari utenti. La parte di contenuto è stata sviluppata tramite HTML5 in modo da sfruttare a pieno i tag semantici e le nuove aggiunte dello standard. Tramite CSS sono state poi aggiunte tutte le regole di presentazione per il layout del sito. Il comportamento dinamico del sito è stato sviluppato con il linguaggio Javascript.\\ Sfruttando gli strumenti del W3C, ad esempio il validatore di HTML e CSS, ci siamo accertati di aver rispettato tutte le regole dello standard.
+
+\subsection{Assenza di CSS}
+In caso di assenza di CSS, il sito mantiene una struttura comprensibile e veicola tutto il contenuto esclusivamente in HTML5. Per un'utente che utilizza strumenti di accesso facilitato per visitare il sito tutto è comunque raggiungibile.
+
+\subsection{Assenza di JS}
+Gli script Javascript sfruttano tutte funzionalità base del linguaggio e quindi non richiedono librerie esterne.
+% togliere bottoni modifica recensione se non c'è js attivo
+
+\subsection{Attributi aria}
+Sfruttando inoltre i tag \textit{aria} si è cercato di dare maggiore significato a varie componenti della pagina quali la breadcrumb. Nei form invece l'attributo \textit{aria-required} è stato omesso dato che è già presente quello standard HTML nei tag di input.
