@@ -5,4 +5,50 @@ L'approccio \textit{Mobile First} ci permette di concentrarci sulla modalità pr
 Invece l'approccio \textit{Responsive Web Design} si basa sul concetto di \textit{media query}, strumenti che ottimizzano la visualizzazione per specifiche dimensioni di dispositivi e vieport.\\
 Dall'analisi dell'utenza possiamo assumere che il sito verrà visitato da browser aggiornati e che quindi supportano le ultime feature degli standard HTML5 e CSS3.\\
 
-\subsection{Layout}
+\section{Tipi di utente}
+
+\begin{itemize}
+    \item \textbf{Utente non registrato}\\ Principale tipologia di utente, potrà solamente fruire del contenuto offerto dal sito e dagli utenti registrati.
+    \item \textbf{Utente registrato}\\ Oltre alle funzionalità di base potrà lasciare recensioni, modifcare le sue recensioni precendetemente lasciate ed eliminarle.
+    \item \textbf{Amministratore} \\ Oltre alle funzionalità disponibili all'utente registrato potrà eliminare le recensioni di tutti gli utenti registrati.
+\end{itemize}
+
+
+\subsection{Struttura del sito}
+
+Il sito presenta molteplici livelli di profondità:
+\begin{itemize}
+    \item \textbf{Home: } Vengono illustrate in breve le funzioni principali del sito.
+    \item \textbf{Corsi: } Vengono elencati i vari corsi del CdL in informatica suddivisi in base all' anno in cui andrebbero seguiti:
+        \begin{itemize}
+            \item \textbf{Corso: } \`E la pagina dedicata ad un corso nello specifico su di essa si può lasciare e leggere le varie recensioni oltre ad ottenere informazioni specifiche del corso, quali una breve descrizione, i CFU e contatto del professore che lo organizza.
+        \end{itemize}
+    \item \textbf{Aule: } Vengono elencate le aule studio vicine ai luoghi frequentati dagli studenti del CdL in informatica accompagnati da una breve descrizione e dalla possibilità di ordinarli per distanza tramite geolocalizzazione:
+        \begin{itemize}
+            \item \textbf{Aula: } È la pagina dedicata ad un' aula studio nello specifico, essa mette a disposizione delle foto, informazioni sui servizi disponibili e recensioni.
+        \end{itemize}
+    \item \textbf{FAQ: } \`E disponibile una serie di domande frequentemente poste sui vari canali del CdL in informatica accompaganti da risposte.
+\end{itemize}
+
+\subsection{Emotional design}
+Durante la progettazione del sito si è deciso di voler trasmettere un senso di apparteneza ed esclusivtà agli utenti iscritti in modo da spingerli a creare contenuto in modo da aiutare tutti gli altri studenti.
+Inoltre nella pagina 404 si è deciso di utilizzare una battuta in cui gli studenti che hanno visitato almeno una volta Torre Archimede possono identificarsi.
+
+% https://context.reverso.net/traduzione/inglese-italiano/relatable
+
+\subsubsection{Header}
+\subsubsection{Breadcrumb}
+Per permette agli utenti una facile navigazione del sito e per evitare la dispersione è stata aggiunta una breadcrumb in ogni pagina visitabile. Sfruttando il tag semantico \textit{<nav>} la breadcrumb è stata sfrutturata tramite una \textit{ordered list} per rispecchiare l'ordine di navigazione del sito. Inolte sono stati aggiunti gli attributi \textit{aria-label="breadcrumb"} per dare un significato aggiuntivo alla \textit{ol} e la pagina attuale identificata come \textit{aria-current="page"} per evitare link circolari. Si è tenuto conto della presenza di \textit{Home} di lingua inglese e inoltre le freccette vengono inserite tramite CSS essendo solamente di presentazione.
+
+\subsubsection{Contenuto}
+\subsubsection{Footer}
+All'interno del footer sono stati inseriti solamente i nomi dei componenti del gruppo e le sedi.
+\subsubsection{Database}
+
+\subsection{Accessibilità}
+Tutto lo sviluppo del sito si è svolto tenendo a mente le raccomandazioni dello standard WCAG 2.0
+
+Abbiamo inoltre testato il tutto numerose volte ed in numerose occasioni tramite Lighthouse, software di google fornito all'interno di Google Chrome.
+
+\subsubsection{Separazione tra contenuto, presentazione e struttura}
+La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio le possibili categorie di accesso effettuate dai vari utenti. La parte di contenuto è stata strutturata 
