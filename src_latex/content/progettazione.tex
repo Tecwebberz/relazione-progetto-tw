@@ -8,11 +8,10 @@ Dall'analisi dell'utenza possiamo assumere che il sito verrà visitato da browse
 \section{Tipi di utente}
 
 \begin{itemize}
-    \item \textbf{Utente non registrato}\\ Principale tipologia di utente, potrà solamente fruire del contenuto offerto dal sito e dagli utenti registrati.
-    \item \textbf{Utente registrato}\\ Oltre alle funzionalità di base potrà lasciare recensioni, modifcare le sue recensioni precendetemente lasciate ed eliminarle.
-    \item \textbf{Amministratore} \\ Oltre alle funzionalità disponibili all'utente registrato potrà eliminare le recensioni di tutti gli utenti registrati.
+    \item \textbf{Utente non registrato:} principale tipologia di utente, potrà solamente fruire del contenuto offerto dal sito e dagli utenti registrati.
+    \item \textbf{Utente registrato:} oltre alle funzionalità di base potrà lasciare recensioni, modifcare le sue recensioni precendetemente lasciate ed eliminarle.
+    \item \textbf{Amministratore:} oltre alle funzionalità disponibili all'utente registrato potrà eliminare le recensioni di tutti gli utenti registrati.
 \end{itemize}
-
 
 \subsection{Struttura del sito}
 
@@ -21,18 +20,14 @@ Il sito presenta molteplici livelli di profondità:
     \item \textbf{Home: } Vengono illustrate in breve le funzioni principali del sito.
     \item \textbf{Corsi: } Vengono elencati i vari corsi del CdL in informatica suddivisi in base all' anno in cui andrebbero seguiti:
         \begin{itemize}
-            \item \textbf{Corso: } \`E la pagina dedicata ad un corso nello specifico su di essa si può lasciare e leggere le varie recensioni oltre ad ottenere informazioni specifiche del corso, quali una breve descrizione, i CFU e contatto del professore che lo organizza.
+            \item \textbf{Corso: } È la pagina dedicata ad un corso nello specifico su di essa si può lasciare e leggere le varie recensioni oltre ad ottenere informazioni specifiche del corso, quali una breve descrizione, i CFU e contatto del professore che lo organizza.
         \end{itemize}
     \item \textbf{Aule: } Vengono elencate le aule studio vicine ai luoghi frequentati dagli studenti del CdL in informatica accompagnati da una breve descrizione e dalla possibilità di ordinarli per distanza tramite geolocalizzazione:
         \begin{itemize}
             \item \textbf{Aula: } È la pagina dedicata ad un' aula studio nello specifico, essa mette a disposizione delle foto, informazioni sui servizi disponibili e recensioni.
         \end{itemize}
-    \item \textbf{FAQ: } \`E disponibile una serie di domande frequentemente poste sui vari canali del CdL in informatica accompaganti da risposte.
+    \item \textbf{FAQ: } È disponibile una serie di domande frequentemente poste sui vari canali del CdL in informatica accompaganti da risposte.
 \end{itemize}
-
-\subsection{Emotional design}
-Durante la progettazione del sito si è deciso di voler trasmettere un senso di apparteneza ed esclusivtà agli utenti iscritti in modo da spingerli a creare contenuto in modo da aiutare tutti gli altri studenti.
-Inoltre nella pagina 404 si è deciso di utilizzare una battuta in cui gli studenti che hanno visitato almeno una volta Torre Archimede possono identificarsi.
 
 \subsubsection{Header}
 Nell'header è presente il logo del sito identificato da un tag \textit{h1} per indicare la prima intestazione. Poi a seguire una \textit{navbar} strutturata come \textit{unordered list} che racchiude le varie pagine del sito. Per evitare loop di link, quello della pagina attuale viene sempre rimosso e reso differente dagli altri.
@@ -59,16 +54,25 @@ Vediamo per ogni pagina come è strutturato il contenuto:
         \item \textbf{Aula} La pagina dell'aula contiene una galleria di immagini rappresentative. Sono contenute tutte le informazioni interessanti dell'aula quali posti disponibili, posizione e presenza o meno di connessione e possibilità di utilizzare prese di corrente. Anche in queste pagine è possibile lasciare e visualizzare le recensioni.
     \end{itemize}
     \item \textbf{FAQ} La pagina delle \textit{FAQ} contiene le \textit{Frequently Asked Question}. Queste sono rappresentate tramite una \textit{definition list}. Questa pagina è principalmente statica in quanto queste risposte sono già ben definite.
-    \item \textit{Accedi e Registrati} Le due pagine che permettono all'utente di entrare nella community 
+    \item \textit{Accedi e Registrati} Le due pagine che permettono all'utente di entrare nella community tramite due \textit{form} che sfruttano a pieno i controlli offerti dall'\textit{input HTML5} e i dati inviati vengono poi controllati via Javascript lato client e via PHP lato server.
 \end{itemize}
+Sono presenti due pagine aggiuntive non direttamente raggiungibili:
+\begin{itemize}
+    \item \textbf{Registrazione avvenuta:} serve per rendere consapevole l'utente di aver completato la registrazione e che questa è andata a buon fine.
+    \item \textbf{Errore 404 e 500:} cercano di aiutare l'utente che per errore si è perso portandolo su una pagina strutturata in modo da reindizzarlo verso il nostro sito.
+\end{itemize}
+
 \subsubsection{Footer}
 All'interno del footer sono stati inseriti solamente i nomi dei componenti del gruppo e le sedi.
+
 \subsubsection{Database}
 
-\subsection{Accessibilità}
-Tutto lo sviluppo del sito si è svolto tenendo a mente le raccomandazioni dello standard WCAG 2.0
+\subsection{Emotional design}
+Durante la progettazione del sito si è deciso di voler trasmettere un senso di apparteneza ed esclusivtà agli utenti iscritti in modo da spingerli a creare contenuto per aiutare tutti la communitiy.
+Inoltre nelle pagina dell'errore 404 è deciso di utilizzare una battuta in cui gli studenti che hanno visitato almeno una volta Torre Archimede possono identificarsi. Invece per la pagina che gestisce gli errori 500 abbiamo puntato di nuovo su una battuta.
 
-Abbiamo inoltre testato il tutto numerose volte ed in numerose occasioni tramite Lighthouse, software di google fornito all'interno di Google Chrome.
+\subsection{Accessibilità}
+Tutto lo sviluppo del sito si è svolto tenendo a mente le raccomandazioni dello standard WCAG 2.0.\\ Abbiamo inoltre testato il tutto numerose volte tramite Lighthouse, software di google fornito all'interno di Google Chrome.
 
 \subsubsection{Separazione tra contenuto, presentazione e struttura}
 La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio le possibili categorie di accesso effettuate dai vari utenti. La parte di contenuto è stata sviluppata tramite HTML5 in modo da sfruttare a pieno i tag semantici e le nuove aggiunte dello standard. Tramite CSS sono state poi aggiunte tutte le regole di presentazione per il layout del sito. Il comportamento dinamico del sito è stato sviluppato con il linguaggio Javascript.\\ Sfruttando gli strumenti del W3C, ad esempio il validatore di HTML e CSS, ci siamo accertati di aver rispettato tutte le regole dello standard.
@@ -90,25 +94,29 @@ Purtroppo a causa di foza maggiore dovute allo status di salute di uno dei membr
             \item Progettazione del sito web.
             \item Sviluppo dei componenti simil ORM (Object relational mapping) in PHP.
             \item Sviluppo del componentPHPer astrarre la sosituzione nei template html.
-            \item RE\item Sviluppo degli script php che si occupano dell' inserimento e rimozione dei dati tramite 
+            \item RE
+            \item Sviluppo degli script php che si occupano dell' inserimento e rimozione dei dati tramite 
             l'interealizzazione delfa realazione.iaccia ORM.
             \item Sviluppo script javascript per l'ordinamento delle aule tramite API di geolocalizzazione.
         \end{itemize}
     \item \textbf{Alessandro Massarenti:}
         \begin{itemize}
             \item Progettazione del sito web.
-            \item Design dell' aspetto grafico del sito.
-            \item Svilupo  delladegli stili CS
-            \item Gestione e creazione delle immagini p.esenti nel sitoS
-            \item Realizzazione della realazione..
+            \item Design dell'aspetto grafico del sito.
+            \item Sviluppo dei fogli di stile css
+            \item Realizzazione ed impaginazione delle pagine HTML
+            \item Gestione e creazione ed elaborazione delle immagini presenti nel sito.
+            \item Realizzazione della relazione.
             \item Sviluppo base di dati.
         \end{itemize}
     \item \textbf{Elia Pasquali:}
         \begin{itemize}
-            \item Progettazione del sito wHTML            \item Design dell' aspetto gJavaScript sito.
-iut del form            \item Sviluppo deJavaScript javascript dedicati alla comparsa/scomparsa di componenti i
+            \item Progettazione del sito HTML
+            \item Design dell' aspetto grafico del sito.
+            \item Sviluppo deJavaScript javascript dedicati alla comparsa/scomparsa di componenti i
             \item Inserimento dei componenti HTML con attributi aria dedicati all' accessibilità.
-            \item Realizzazione della realazione.nterattivi. avascript dedicati alla validazione  egli in         \item Sviluppo base di dati.
+            \item Realizzazione della realazione.nterattivi. avascript dedicati alla validazione  egli in
+            \item Sviluppo base di dati.
         \end{itemize}
 t\end{itemize}
 Nonostant questa suddivisione tt i mebri mbri hanno collaborato in tutti gli aspetti della realizzazione del sito soprattutto per quanto riguarda l'accessibiltà di esso.ta suddivisione tt i mebri 
