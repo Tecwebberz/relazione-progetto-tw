@@ -15,8 +15,9 @@ Nonostante aver utilizzato il più possibile i tag semantici offerti da HTML5 ab
 \begin{itemize}
     \item \textbf{Breadcrumb:} la braedcrumb è stata definita tramite \textit{aria-label} come \textit{breadcrumb}, inoltre la pagina attuale è indicata dall'attributo \textit{aria-page="current"}.
     \item \textbf{Validazione dei form:} lo script di validazione del form aggiunge un elemento nel DOM dinamicamente. Viene quindi indicato tramite dal ruolo \textit{aria-role="alert"} che porta l'attenzione dello screen reader su di esso quando questoviene inserito nella pagina.
-    \item \textbf{Bottoni link}: quando non è stato possibile sfruttare tag come \textit{<button>} è stato necessario usare l'attributo \textit{role="button"} su quei link \textit{<a>} che vengono rappresentati come bottoni via CSS.
-    \item \textbf{Link aule}: nelle card delle aule è stata aggiunta una \textit{aria-label} dinamica per dare maggior significato al link \textit{Più info}.
+    \item \textbf{Bottoni link:} quando non è stato possibile sfruttare tag come \textit{<button>} è stato necessario usare l'attributo \textit{role="button"} su quei link \textit{<a>} che vengono rappresentati come bottoni via CSS.
+    \item \textbf{Link aule:} nelle card delle aule è stata aggiunta una \textit{aria-label} dinamica per dare maggior significato al link \textit{Più info}.´
+    \item \textbf{Sistema di rating:} la struttura del sistema di rating a stelle fa affidamento al foglio di stile per creare l'animazione delle stelle. In caso di assenza di esso, tutto il form mantiene una struttura accessibile: tutti gli input hanno una label identificativa univoca. Le \textit{<i>} necessarie alle stelle sono state dichiarate \textit{aria-disabled} per gli screenreader. 
 \end{itemize}
 Altri attributi aria come \textit{aria-requried} e simili nei form sono stati omessi dato che sono già presenti quelli nativi di HTML5 che veicolano lo stesso significato.
 
@@ -32,7 +33,13 @@ Il sito specifica come lingua principale l'italiano. Ogni parola che deve essere
 \subsection{Strumenti di testing}
 
 Tutte le pagine e i fogli di stile sono state controllate tramite il \href{https://validator.w3.org/}{validatore HTML e CSS} offerto dal W3C.\\
-Durante tutto il ciclo di sviluppo la maggior parte dei controlli è stata fatta tramite i \textit{Firefox Developer Tools} e il software \textit{Lighthouse} all'interno del browser Google Chrome.\\
-Il sito è stato testato su ambiente Linux, Windows e MacOS, sui browser Firefox, Chromium, Google Chrome, Microsoft Edge. Per Internet Explorer è stata controllata la fruibilità del contenuto nelle varie versioni: nella versione 11 è comprensibile, più si scende più alcune funzionalità si perdono (ad esempio Javascript e regole di stile più recenti in CSS).
+Durante tutto il ciclo di sviluppo la maggior parte dei controlli è stata fatta tramite i \textit{Firefox Developer Tools} e il software \textit{Lighthouse} all'interno del browser Google Chrome.
 
-\\Abbiamo inoltre testato il tutto numerose volte tramite Lighthouse, software di google fornito all'interno di Google Chrome e tramite i controlli di accessibilità tramite i Developer Tools di FIrefox.
+\subsubsection{Ambienti di test}
+Il sito è stato testato su ambiente Linux, Windows e MacOS, sui browser Firefox, Chromium, Google Chrome, Microsoft Edge.\\
+Dopo aver deciso di utilizzare il formato \textit{webp} per le immagini per questioni di performance, abbiamo abbandonato il supporto alle varie versioni di Internet Explorer. Nonostante ciò, vista la nostra utenza è molto improbabile avere accessi da un browser di quella famiglia.\\
+
+\subsubsection{Risultati Lighthouse}
+Tramite i report generati da Lighthouse abbiamo cercato di tenere al massimo i risultati. Accessibilità, Best Practices e SEO risultano 100 in tutte le pagine.\\
+Alcuni punti vengono persi in performance. La prima miglioria è stata quella di utilizzare un formato più leggero per le immagini. Una proposta di Lighthouse è quella di inserire inline alcune parti di CSS e JS, ma questo andrebbe contro il concetto di separazione di struttura, presentazione e comportamento.\\
+Per essere il più possibile \textit{mobile friendly} abbiamo cercato di dare una misura adatta al touch alla maggior parte dei bottoni presenti nel nostro sito.
