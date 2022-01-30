@@ -16,6 +16,8 @@ Un utente può modificare o eliminare una recensione, un admin può eliminare qu
 Inoltre gestisce il \textit{max} e il \textit{placeholder} del campo \textit{Anno di immatricolazione} in modo che siano impostati sull'anno attuale.
 
 \subsubsection{Script di ordinamento aule}
+Nella pagina \textit{aule.php} se il browser dell'utente supporta le API di geolocalizzazione verrà mostrto un bottone per ordinare le varie aule in base alla distanza che verrà anche riportata nella card. Si è deciso di non mostrare il bottone se l'oggetto \textit{navigator} non supporta la funzionalità di geolocalizzazione per non dare la parvenza di escludere parte dell'utenza. Per l'implementazione anche calcoli della distanza su una sfera si è deciso di
+non usare nessuna libreria per rendere il più performante possibile l'applicazione.
 
 \subsection{Back-end}
 
@@ -68,18 +70,3 @@ potenziali leaks.
 Dentro la cartella \textit{app} sono presenti tutti i file php che si occupano
 di gestire i target dei form e quindi l'interazione tra utente e i dati messi
 a disposizione dell' applicativo.
-
-\subsection{Frontend}
-
-\subsubsection{Ordinamento delle aule in base alla distanza}
-Nella pagina \textit{aule.php} se il browser dell'utente supporta le api di
-geolocalizzazione verrà mostrto un bottone per ordinare le varie aule in base
-alla distanza che verrà anche riportata nella card.\\
-
-Si è deciso di non mostrare il bottone se l'oggetto \textit{navigator} non
-supporta la funzionalità di geolocalizzazione per non dare la parvenza di
-escludere parte dell'utenza.\\
-
-Per l'implementazione anche calcoli della distanza su una sfera si è deciso di
-non usare nessuna libreria per rendere il più performante possibile
-l'applicazione.
