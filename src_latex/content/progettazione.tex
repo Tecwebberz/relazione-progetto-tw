@@ -71,27 +71,6 @@ All'interno del footer sono stati inseriti solamente i nomi dei componenti del g
 Durante la progettazione del sito si è deciso di voler trasmettere un senso di apparteneza ed esclusivtà agli utenti iscritti in modo da spingerli a creare contenuto per aiutare tutti la communitiy.
 Inoltre nelle pagina dell'errore 404 è deciso di utilizzare una battuta in cui gli studenti che hanno visitato almeno una volta Torre Archimede possono identificarsi. Invece per la pagina che gestisce gli errori 500 abbiamo puntato di nuovo su una battuta.
 
-\subsection{Accessibilità}
-Tutto lo sviluppo del sito si è svolto tenendo a mente le raccomandazioni dello standard WCAG 2.0.\\Abbiamo inoltre testato il tutto numerose volte tramite Lighthouse, software di google fornito all'interno di Google Chrome e tramite i controlli di accessibilità tramite i Developer Tools di FIrefox.
-
-\subsubsection{Separazione tra contenuto, presentazione e struttura}
-La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio le possibili categorie di accesso effettuate dai vari utenti. La parte di contenuto è stata sviluppata tramite HTML5 in modo da sfruttare a pieno i tag semantici e le nuove aggiunte dello standard. Tramite CSS sono state poi aggiunte tutte le regole di presentazione per il layout del sito. Il comportamento dinamico del sito è stato sviluppato con il linguaggio Javascript.\\ Sfruttando gli strumenti del W3C, ad esempio il validatore di HTML e CSS, ci siamo accertati di aver rispettato tutte le regole dello standard.
-
-\subsubsection{Assenza di CSS}
-In caso di assenza di CSS, il sito mantiene una struttura comprensibile e veicola tutto il contenuto esclusivamente in HTML5. Per un'utente che utilizza strumenti di accesso facilitato per visitare il sito tutto è comunque raggiungibile.
-
-\subsubsection{Assenza di JS}
-Gli script Javascript sfruttano tutte funzionalità base del linguaggio e quindi non richiedono librerie esterne.
-
-\subsubsection{Attributi ARIA}
-Nonostante aver utilizzato il più possibile i tag semantici offerti da HTML5 abbiamo inserito anche alcuni attributi ARIA in modo da rendere più "espressivi" e accessibli.
-\begin{itemize}
-    \item \textbf{Breadcrumb:} la braedcrumb è stata definita tramite \textit{aria-label} come \textit{breadcrumb}, inoltre la pagina attuale è indicata dall'attributo \textit{aria-page="current"}.
-    \item \textbf{Validazione dei form:} lo script di validazione del form aggiunge un elemento nel DOM dinamicamente. Viene quindi indicato tramite dal ruolo \textit{aria-role="alert"} che porta l'attenzione dello screen reader su di esso quando questoviene inserito nella pagina.
-    \item \textbf{Bottoni link}: quando non è stato possibile sfruttare tag come \textit{<button>} è stato necessario usare l'attributo \textit{role="button"} su quei link \textit{<a>} che vengono rappresentati come bottoni via CSS.
-    \item \textbf{Link aule}: nelle card delle aule è stata aggiunta una \textit{aria-label} dinamica per dare maggior significato al link \textit{Più info}.
-\end{itemize}
-Altri attributi aria come \textit{aria-requried} e simili nei form sono stati omessi dato che sono già presenti quelli nativi di HTML5 che veicolano lo stesso significato.
 
 \subsection{Suddivisione del lavoro}
 Purtroppo a causa di foza maggiore dovute allo stato di salute di uno dei membri del gruppo orginale, il progetto è stato svolto da 3 persone. Ci siamo suddivisi il lavoro nel seguente modo.
