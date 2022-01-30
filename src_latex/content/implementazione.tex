@@ -1,5 +1,22 @@
 \section{Implementazione}
 
+\subsection{Front-end}
+
+\subsubsection{Script di validazione}
+Per gestire la validazione lato client è stato scritto uno script Javascript che controlla tramite espressioni regolari che i contenuti dei campi dei form siano validi ogni volta che il focus su di loro cambia. Ogni campo ha la sua funzione specifica che analizza adeguatamente il contenuto.\\ Gli errori vengono mostrati tramite una lista non ordinata che viene appesa alla label del campo. Per fare in modo questo nuovo elemento dinamico avesse un significato di \textit{alert} lo script aggiunge quel rolo aria alla lista.
+
+\subsubsection{Script di modifica recensione}
+Un utente può modificare o eliminare una recensione, un admin può eliminare qualsiasi recensione. Se l'utente ha i permessi adatti sotto la recensione compaiono due bottoni. Il bottone di modifica invoca uno script Javascript che agisce nel seguente modo:
+\begin{enumerate}
+    \item Ricava quante modifiche sono attualmente attive per creare poi link unici
+    \item Comincia a costruire un form che rispecchia quello di una nuova recensione, estraendo il valore del voto e del testo già presenti.
+    \item Nasconde la recensione che si vuole modificare, eliminando direttamente dalla visualizzazione gli elementi presenti, dato che durante la modifica non devono essere accessibili.
+    \item Se la modifica viene effettuata il form la invia, altrimenti tramite il bottone di annullamento gli elementi precedentemente nascosti vengono resi nuovamente visibili 
+\end{enumerate}
+Inoltre gestisce il \textit{max} e il \textit{placeholder} del campo \textit{Anno di immatricolazione} in modo che siano impostati sull'anno attuale.
+
+\subsubsection{Script di ordinamento aule}
+
 \subsection{Back-end}
 
 \subsubsection{Meccanismo di templating}
