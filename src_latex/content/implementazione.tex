@@ -1,0 +1,33 @@
+\section{Implementazione}
+
+\subsection{Back-end}
+
+\subsubsection{Meccanismo di templating}
+È stato deciso di astrarre il meccanismo di template tramite le classi PHP
+\textit{TemplateEngine} e \textit{Template} presenti nel file 
+\textit{lib\slshape template.engine.php}, il motivo di questa scelta è stato quello di
+centralizzare la gestione dei template in modo da permettere a tutti gli
+sviluppatori di lavorare su template scritti da altri senza problemi, ma
+soprattutto quello di non mostrare mai agli utenti pagine in cui non sono stati
+sostituiti tutti i pattern così da non generare mai pagine HTML invalide che
+potrebbero causare problemi di inacessibilità del sito.
+
+\subsection{Connessione al database}
+Si è creata la classe PHP \textit{DatabaseLayer} presente in
+\textit{lib/databaselayer.php} per astrarre tutte le operazioni sia di connessione/
+disconnessione al db e di query:
+\begin{itemize}
+    \item Connessione: la connessione al db può operare in due modi: modalità non
+        persistente in cui la connessione è aperta prima della query e chiusa
+        subito dopo così da rendere meno verboso ed error prone tutte le pagine
+        PHP che utilizzano solo una query al db; modalità persistente tramite
+        il metodo \textit{persist()} che permette di gestite la connessione
+        manualemente e si usa quando la pagina esegure più di una query.
+    \item Query: si è deciso di astrarre il meccanismo di query per forzare sempre
+        l'utilizzo dei prepared statement così da prevenire iniezioni SQL.
+\end{itemize}
+
+\subsection{Meccanismo ORM}
+Si è creata una serie di classi presenti in \textit{lib\/orm\/} per
+astrarre le operazioni delle varie entries nel nel db per garantire una interfaccia
+uniforme a tutti i programmatori e semplificare 

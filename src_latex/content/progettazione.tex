@@ -34,13 +34,33 @@ Il sito presenta molteplici livelli di profondità:
 Durante la progettazione del sito si è deciso di voler trasmettere un senso di apparteneza ed esclusivtà agli utenti iscritti in modo da spingerli a creare contenuto in modo da aiutare tutti gli altri studenti.
 Inoltre nella pagina 404 si è deciso di utilizzare una battuta in cui gli studenti che hanno visitato almeno una volta Torre Archimede possono identificarsi.
 
-% https://context.reverso.net/traduzione/inglese-italiano/relatable
-
 \subsubsection{Header}
+Nell'header è presente il logo del sito identificato da un tag \textit{h1} per indicare la prima intestazione. Poi a seguire una \textit{navbar} strutturata come \textit{unordered list} che racchiude le varie pagine del sito. Per evitare loop di link, quello della pagina attuale viene sempre rimosso e reso differente dagli altri.
+
 \subsubsection{Breadcrumb}
-Per permette agli utenti una facile navigazione del sito e per evitare la dispersione è stata aggiunta una breadcrumb in ogni pagina visitabile. Sfruttando il tag semantico \textit{<nav>} la breadcrumb è stata sfrutturata tramite una \textit{ordered list} per rispecchiare l'ordine di navigazione del sito. Inolte sono stati aggiunti gli attributi \textit{aria-label="breadcrumb"} per dare un significato aggiuntivo alla \textit{ol} e la pagina attuale identificata come \textit{aria-current="page"} per evitare link circolari. Si è tenuto conto della presenza di \textit{Home} di lingua inglese e inoltre le freccette vengono inserite tramite CSS essendo solamente di presentazione.
+Per permette agli utenti agevolare la visita del sito e per evitare la dispersione è stata aggiunta una breadcrumb in ogni pagina visitabile. Sfruttando il tag semantico \textit{<nav>} e strutturata tramite una \textit{ordered list} per rispecchiare l'ordine di navigazione. Anche in questo elemento la pagina attuale non è un link attivo per evitare loop. Si è tenuto conto della presenza di \textit{Home} di lingua inglese e inoltre le freccette vengono inserite tramite CSS essendo solamente di presentazione.
 
 \subsubsection{Contenuto}
+Per ogni pagina si è cercato di mantenere una struttura semplice che permettesse all'utente di rispondere in modo semplice alle tre domande fondamentali:
+    \begin{itemize}
+        \item \textbf{Dove sono?:} domanda a cui è facile rispondere grazie all'header e specialmente alla breadcrumb.
+        \item \textbf{Di cosa si tratta?:} grazie alla struttura semplice e minimale di ogni pagina il contenuto principale salta direttamente all'occhio dell'utente.
+        \item \textbf{Dove posso andare?:} anche qui data la gerarchia su cui si basano le pagine del sito i percorsi sono facilmente intuibili dall'utente. Inoltre sempre grazie alla breadcrumb è possibile farsi un'idea di come risalire le pagine.
+    \end{itemize}
+Vediamo per ogni pagina come è strutturato il contenuto:
+\begin{itemize}
+    \item \textbf{Home} In questa pagina è presente una semplice introduzione allo scopo del sito e tutte le possibili pagine raggiungibili si trovano nell'header
+    \item \textbf{Corsi} Qui sono presenti, suddivisi tramite uno schema esatto (per anno) tramite una \textit{ordered list} che poi si suddivide a sua volta in sottoliste \textit{unordered} dove sono presenti bottoni che agiscono da link verso le specifiche pagine del corso.
+    \begin{itemize}
+        \item \textbf{Corso} La pagina del singolo corso mantiene una struttura minimale con all'interno una lista \textit{non ordinata} che contiene le informazioni principali quali referente e contatti, anno e semestre di erogazione. Inoltre è presente il form per inviare la recensione e quelle già presenti, con la media calcolata.
+    \end{itemize}
+    \item \textbf{Aule} La pagina delle aule presenta una lista di aule \textit{ordered}. Questo perchè è già predisposta per essere ordinata in base alla distanza dall'utente tramite uno script Javascript. Tutte le aule poi sono strutturate in una \textit{css grid} che racchiude le \textit{cards} delle singole aule.
+    \begin{itemize}
+        \item \textbf{Aula} La pagina dell'aula contiene una galleria di immagini rappresentative. Sono contenute tutte le informazioni interessanti dell'aula quali posti disponibili, posizione e presenza o meno di connessione e possibilità di utilizzare prese di corrente. Anche in queste pagine è possibile lasciare e visualizzare le recensioni.
+    \end{itemize}
+    \item \textbf{FAQ} La pagina delle \textit{FAQ} contiene le \textit{Frequently Asked Question}. Queste sono rappresentate tramite una \textit{definition list}. Questa pagina è principalmente statica in quanto queste risposte sono già ben definite.
+    \item \textit{Accedi e Registrati} Le due pagine che permettono all'utente di entrare nella community 
+\end{itemize}
 \subsubsection{Footer}
 All'interno del footer sono stati inseriti solamente i nomi dei componenti del gruppo e le sedi.
 \subsubsection{Database}
@@ -58,7 +78,37 @@ In caso di assenza di CSS, il sito mantiene una struttura comprensibile e veicol
 
 \subsection{Assenza di JS}
 Gli script Javascript sfruttano tutte funzionalità base del linguaggio e quindi non richiedono librerie esterne.
-% togliere bottoni modifica recensione se non c'è js attivo
 
 \subsection{Attributi aria}
 Sfruttando inoltre i tag \textit{aria} si è cercato di dare maggiore significato a varie componenti della pagina quali la breadcrumb. Nei form invece l'attributo \textit{aria-required} è stato omesso dato che è già presente quello standard HTML nei tag di input.
+
+\subsection{Suddivisione del lavoro}
+Purtroppo a causa di foza maggiore dovute allo status di salute di uno dei membri del gruppo orginale il progetto è stato svolto da 3 persone suddividendosi il lavoro nei seguenti modi:
+\begin{itemize}
+    \item \textbf{Alessio Ferrarini:}
+        \begin{itemize}
+            \item Progettazione del sito web.
+            \item Sviluppo dei componenti simil ORM (Object relational mapping) in PHP.
+            \item Sviluppo del componentPHPer astrarre la sosituzione nei template html.
+            \item RE\item Sviluppo degli script php che si occupano dell' inserimento e rimozione dei dati tramite 
+            l'interealizzazione delfa realazione.iaccia ORM.
+            \item Sviluppo script javascript per l'ordinamento delle aule tramite API di geolocalizzazione.
+        \end{itemize}
+    \item \textbf{Alessandro Massarenti:}
+        \begin{itemize}
+            \item Progettazione del sito web.
+            \item Design dell' aspetto grafico del sito.
+            \item Svilupo  delladegli stili CS
+            \item Gestione e creazione delle immagini p.esenti nel sitoS
+            \item Realizzazione della realazione..
+            \item Sviluppo base di dati.
+        \end{itemize}
+    \item \textbf{Elia Pasquali:}
+        \begin{itemize}
+            \item Progettazione del sito wHTML            \item Design dell' aspetto gJavaScript sito.
+iut del form            \item Sviluppo deJavaScript javascript dedicati alla comparsa/scomparsa di componenti i
+            \item Inserimento dei componenti HTML con attributi aria dedicati all' accessibilità.
+            \item Realizzazione della realazione.nterattivi. avascript dedicati alla validazione  egli in         \item Sviluppo base di dati.
+        \end{itemize}
+t\end{itemize}
+Nonostant questa suddivisione tt i mebri mbri hanno collaborato in tutti gli aspetti della realizzazione del sito soprattutto per quanto riguarda l'accessibiltà di esso.ta suddivisione tt i mebri 
