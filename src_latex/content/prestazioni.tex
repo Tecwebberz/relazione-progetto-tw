@@ -1,0 +1,18 @@
+\section{Prestazioni e SEO}
+
+Le prestazioni di un sito sono fondamentali per avere un buon posizionamento
+sui vari motodi di ricerca, quindi si è deciso di:
+\begin{itemize}
+    \item Minimizzare tutti i file javascript e css.
+    \item Sviluppare il codice PHP in \textit{early return style} per diminuire
+        il più possibile i tempi di esecuzione.
+    \item Utilizzare standard moderni come \textit{WebP} per ridurre il più
+        possibile il peso delle immagini senza perdere qualità.
+    \item Impostato regole di caching più efficaci per i contenuti statici in
+        \textit{htaccess}.
+    \item Usato il più possibile i consigli di google lighthouse (rispettando
+        sempre la separazione tra contenuto e presentazione, es: no inlining
+        di regole css fondamentali), ottenendo sempre 100\% in tutte le categorie
+        tranne prestazioni in cui comunque si ottiene 100\% nella maggioranza delle
+        pagine e un 95\% nelle peggiori.
+\end{itemize}
