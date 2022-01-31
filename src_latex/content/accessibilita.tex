@@ -17,7 +17,7 @@ Nonostante aver utilizzato il più possibile i tag semantici offerti da HTML5 ab
     \item \textbf{Validazione dei form:} lo script di validazione del form aggiunge un elemento nel DOM dinamicamente. Viene quindi indicato tramite dal ruolo \textit{aria-role="alert"} che porta l'attenzione dello screen reader su di esso quando questoviene inserito nella pagina.
     \item \textbf{Bottoni link:} quando non è stato possibile sfruttare tag come \textit{<button>} è stato necessario usare l'attributo \textit{role="button"} su quei link \textit{<a>} che vengono rappresentati come bottoni via CSS.
     \item \textbf{Link aule:} nelle card delle aule è stata aggiunta una \textit{aria-label} dinamica per dare maggior significato al link \textit{Più info}.´
-    \item \textbf{Sistema di rating:} la struttura del sistema di rating a stelle fa affidamento al foglio di stile per creare l'animazione delle stelle. In caso di assenza di esso, tutto il form mantiene una struttura accessibile: tutti gli input hanno una label identificativa univoca. Le \textit{<i>} necessarie alle stelle sono state dichiarate \textit{aria-disabled} per gli screenreader. 
+    \item \textbf{Sistema di rating:} la struttura del sistema di rating a stelle fa affidamento al foglio di stile per creare l'animazione delle stelle. In caso di assenza di esso, tutto il form mantiene una struttura accessibile: tutti gli input hanno una label identificativa univoca. Le \textit{<i>} necessarie alle stelle sono state dichiarate \textit{aria-disabled} per gli screenreader.
 \end{itemize}
 Altri attributi aria come \textit{aria-requried} e simili nei form sono stati omessi dato che sono già presenti quelli nativi di HTML5 che veicolano lo stesso significato.
 
