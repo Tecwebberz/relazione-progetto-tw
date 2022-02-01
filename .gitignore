@@ -8,3 +8,4 @@
 *.toc
 src_latex/main.pdf
 *.xdv
+.DS_Store
