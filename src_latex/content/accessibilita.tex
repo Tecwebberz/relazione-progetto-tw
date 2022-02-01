@@ -2,45 +2,54 @@
 Tutto lo sviluppo del sito si è svolto tenendo a mente le raccomandazioni dello standard WCAG 2.0.
 
 \subsection{Separazione tra contenuto, presentazione e struttura}
-La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio le possibili categorie di accesso effettuate dai vari utenti. La parte di contenuto è stata sviluppata tramite HTML5 in modo da sfruttare a pieno i tag semantici e le nuove aggiunte dello standard. Tramite CSS sono state poi aggiunte tutte le regole di presentazione per il layout del sito. Il comportamento dinamico del sito è stato sviluppato con il linguaggio Javascript.\\ Sfruttando gli strumenti del W3C, ad esempio il validatore di HTML e CSS, ci siamo accertati di aver rispettato tutte le regole dello standard.
+La separazione tra queste tre parti fondamentali del sito ha permesso di gestire al meglio gli accessi delle varie categorie di utenti.\\
+La parte di contenuto è stata sviluppata tramite \texttt{HTML5} in modo da poter sfruttare a pieno i tag semantici e le nuove funzionalità aggiunte dello standard.\footnote{Ci siamo permessi di utilizzarlo data l'analisi dell'utenza, vedi sezione \ref{analisi_utenza}}\\
+Tramite \texttt{CSS3} sono state poi aggiunte tutte le regole di presentazione per il layout del sito. Il comportamento dinamico del sito è stato anche coadiuvato dal linguaggio Javascript.\\
+Sfruttando gli strumenti del W3C, ad esempio il validatore di HTML e CSS, ci siamo accertati durante tutto lo sviluppo di aver rispettato tutte le regole dello standard.
 
 \subsubsection{Assenza di CSS}
-In caso di assenza di CSS, il sito mantiene una struttura comprensibile e veicola tutto il contenuto esclusivamente in HTML5. Per un'utente che utilizza strumenti di accesso facilitato per visitare il sito tutto è comunque raggiungibile.
+In caso di assenza di CSS, il sito mantiene una struttura comprensibile e veicola tutto il contenuto anche esclusivamente in HTML.\\
+Abbiamo avuto questa particolare attenzione per essere sicuri di mantenere accessibile il sito a tutte le categorie di utenti che utilizzano strumenti di accesso facilitato per visitare il sito. Tutto è infatti raggiungibile chiaramente anche tramite screen-reader.
 
 \subsubsection{Assenza di JS}
-Gli script Javascript sfruttano tutte funzionalità base del linguaggio e quindi non richiedono librerie esterne.
+Gli script Javascript sfruttano tutte funzionalità base del linguaggio e quindi non richiedono librerie esterne. In caso di assenza Javascript tutto rimane stabile e i contenuti che lo necessitano vengono nascosti. 
 
 \subsubsection{Attributi ARIA}
-Nonostante aver utilizzato il più possibile i tag semantici offerti da HTML5 abbiamo inserito anche alcuni attributi ARIA in modo da rendere più "espressivi" e accessibli.
+Nonostante aver utilizzato il più possibile i tag semantici offerti da \texttt{HTML5} abbiamo inserito anche alcuni attributi ARIA in modo da renderli più espressivi e accessibli.
 \begin{itemize}
-    \item \textbf{Breadcrumb:} la braedcrumb è stata definita tramite \textit{aria-label} come \textit{breadcrumb}, inoltre la pagina attuale è indicata dall'attributo \textit{aria-page="current"}.
-    \item \textbf{Validazione dei form:} lo script di validazione del form aggiunge un elemento nel DOM dinamicamente. Viene quindi indicato tramite dal ruolo \textit{aria-role="alert"} che porta l'attenzione dello screen reader su di esso quando questoviene inserito nella pagina.
-    \item \textbf{Bottoni link:} quando non è stato possibile sfruttare tag come \textit{<button>} è stato necessario usare l'attributo \textit{role="button"} su quei link \textit{<a>} che vengono rappresentati come bottoni via CSS.
-    \item \textbf{Link aule:} nelle card delle aule è stata aggiunta una \textit{aria-label} dinamica per dare maggior significato al link \textit{Più info}.´
-    \item \textbf{Sistema di rating:} la struttura del sistema di rating a stelle fa affidamento al foglio di stile per creare l'animazione delle stelle. In caso di assenza di esso, tutto il form mantiene una struttura accessibile: tutti gli input hanno una label identificativa univoca. Le \textit{<i>} necessarie alle stelle sono state dichiarate \textit{aria-disabled} per gli screenreader.
+    \item \textbf{Breadcrumb:} la breadcrumb è stata definita tramite \texttt{aria-label} come \textit{breadcrumb}, inoltre la pagina attuale è indicata dall'attributo \texttt{aria-page="current"}.
+    \item \textbf{Validazione dei form:} lo script di validazione del form aggiunge un elemento nel DOM dinamicamente. Viene quindi indicato dal ruolo \texttt{aria-role="alert"} che porta l'attenzione dello screen-reader su di esso quando questo viene inserito nella pagina.
+    \item \textbf{Bottoni link:} quando non è stato possibile sfruttare tag come \texttt{<button>} è stato necessario usare l'attributo \texttt{role="button"} su quei link \texttt{<a>} che vengono rappresentati come bottoni dal CSS.
+    \item \textbf{Link aule:} nelle card delle aule è stata aggiunta una \texttt{aria-label} dinamica per aggiungere significato al link \textit{Più info} sempre per aiutare la lettura da parte degli screen-reader.
+    \item \textbf{Sistema di rating:} la struttura del sistema di rating a stelle fa affidamento al foglio di stile per creare l'animazione. In caso di assenza di esso, tutto il form mantiene una struttura accessibile: tutti gli input hanno una label identificativa univoca. Le \texttt{<i>} necessarie alle stelle, sono state dichiarate \texttt{aria-disabled} per gli screen-reader.
 \end{itemize}
-Altri attributi aria come \textit{aria-requried} e simili nei form sono stati omessi dato che sono già presenti quelli nativi di HTML5 che veicolano lo stesso significato.
+Altri attributi aria come \texttt{aria-requried} e simili nei form sono stati omessi dato che sono già presenti quelli nativi di \texttt{HTML5} che veicolano lo stesso significato.
 
 \subsubsection{Contrasti}
-Si è preso come principale colore uno che rimandi all'ateneo e al dipartimento. Da lì tutti gli altri colori sono stati scelti in modo da avere un contrasto che rispetti gli standard AAA del WCAG sfruttando lo strumento online \href{https://app.contrast-finder.org/}{Contrast Finder}. Queste analisi sono state fatte tramite i siti \href{https://contrastchecker.com/}{WCAG - Contrast Checker} e \href{https://coolors.co/}{Color contrast checker} e i \textit{Firefox Developer Tools}.
+Come principale colore se ne è scelto uno che rimandi ai colori di bandiera dell'ateneo. Da lì tutti gli altri colori sono stati scelti in modo da avere un contrasto che rispetti gli standard AAA del WCAG sfruttando lo strumento online \href{https://app.contrast-finder.org/}{Contrast Finder}. Questi contrasti sono poi stati analizzati e confermati tramite i siti \href{https://contrastchecker.com/}{WCAG - Contrast Checker} e \href{https://coolors.co/}{Color contrast checker}, oltre ai \textit{Firefox Developer Tools}.\\
+Si è preso molto a cuore l'importanza dei contrasti cercando di mantenere sempre un livello di contrasto sopra il 7 nonostante non fosse strettamente necessario per legge.
 
 \subsubsection{Tabindex}
-Non è sembrato necessario modificare l'ordine dei tabindex manualmente. Per come è stato strutturato il sito questi sono già organizzati in modo adeguato.
+Non è sembrato necessario modificare l'ordine dei tabindex manualmente. Per come è stato strutturato il sito questi sono già organizzati nel modo corretto.
 
 \subsubsection{Lingue straniere e termini abbreviati}
-Il sito specifica come lingua principale l'italiano. Ogni parola che deve essere letta con pronuncia straniera è stata contrassegnata tramite l'attributo \textit{lang} in un tag di comodo come \textit{span} oppure nel suo tag di appartenza. Ad esempio la semplice parola \textit{Home} nella breadcrumb oppure \textit{stage} nelle FAQ. Inoltre tutte le sigle utilizzate (ad esempio \textit{ESU} ed \textit{ISEE}) sono state inserite all'interno di dei tag \textit{<abbr>}, contenenti sia l'attributo \textit{title} per espanderle che una \textit{aria-label} per dare un'alternativa in lettura agli screen reader.
+Il sito specifica come lingua principale l'italiano, però ogni parola che deve essere letta con pronuncia straniera è stata contrassegnata tramit l'attributo \texttt{lang}.\\
+Questo attributo è stato posizionato nel suo tag di appartenenza e altre in un tag di comodo aggiunto al momento come \texttt{<span>}.\\ 
+Un esempio di questa nostra attenzione è la semplice parola \textit{Home} nella breadcrumb e in tutte le altre sue posizioni, oppure nella parola \textit{stage} presente in FAQ. Inoltre tutte le sigle utilizzate (ad esempio \textit{ESU} ed \textit{ISEE}) sono state inserite all'interno di dei tag \texttt{<abbr>}, contenenti sia l'attributo \texttt{title} per espanderle che una \texttt{aria-label} per dare un'alternativa in lettura agli screen-reader.
 
 \subsection{Strumenti di testing}
 
 Tutte le pagine e i fogli di stile sono state controllate tramite il \href{https://validator.w3.org/}{validatore HTML e CSS} offerto dal W3C.\\
-Durante tutto il ciclo di sviluppo la maggior parte dei controlli è stata fatta tramite i \textit{Firefox Developer Tools} e il software \href{https://developers.google.com/web/tools/lighthouse}{Lighthouse} all'interno del browser Google Chrome.\\
-Inoltre per alcune simulazioni di disabilità è stata utilizzata l'estensione \textit{Silktide}.
+Durante tutto il ciclo di sviluppo la maggior parte dei controlli è stata fatta tramite i \textit{Firefox Developer Tools} e il software \href{https://developers.google.com/web/tools/lighthouse}{Lighthouse} integrato all'interno del browser Google Chrome.\\
+Per alcune simulazioni di disabilità è stata utilizzata l'estensione \textit{Silktide}.
 
 \subsubsection{Ambienti di test}
-Il sito è stato testato su ambiente Linux, Windows e MacOS, sui browser Firefox, Chromium, Google Chrome, Microsoft Edge.\\
-Dopo aver deciso di utilizzare il formato \textit{webp} per le immagini per questioni di performance, abbiamo abbandonato il supporto alle varie versioni di Internet Explorer. Nonostante ciò, vista la nostra utenza è molto improbabile avere accessi da un browser di quella famiglia.\\
+Il sito è stato testato su ambiente Linux, Windows e MacOS, sui browser Firefox, LibreWolf, Chromium, Google Chrome, Microsoft Edge e Safari.\\
+Nonostante Internet Explorer sia arrivato verso la sua fine vita, soprattutto per il nostro target di utenza \footnote{si veda nuovamente sezione \ref{analisi_utenza}} abbiamo comunque fatto dei test su questo browser e il nostro sito risulta non esteticamente completo ma risulta comunque utilizzabile.\\ 
+Il colpo di grazia al morente Internet Explorer lo abbiamo dato decidendo di utilizzare il formato \texttt{webp} per le immagini. Abbiamo scelto questo formato per privilegiare il nostro target di utenti e offrirgli migliori performance.
 
-\subsubsection{Risultati Lighthouse}
-Tramite i report generati da Lighthouse abbiamo cercato di tenere al massimo i risultati. Accessibilità, Best Practices e SEO risultano 100 in tutte le pagine.\\
-Alcuni punti vengono persi in performance. La prima miglioria è stata quella di utilizzare un formato più leggero per le immagini. Una proposta di Lighthouse è quella di inserire inline alcune parti di CSS e JS, ma questo andrebbe contro il concetto di separazione di struttura, presentazione e comportamento.\\
-Per essere il più possibile \textit{mobile friendly} abbiamo cercato di dare una misura adatta al touch alla maggior parte dei bottoni presenti nel nostro sito.
+\subsubsection{Risultati di Lighthouse}
+Tramite i report generati da Lighthouse abbiamo cercato di tenere al massimo i risultati. Accessibilità, \textit{Best Practices} e SEO risultano 100\% in tutte le pagine.\\
+Alcuni punti vengono persi in performance. La prima miglioria è stata quella di utilizzare un formato più leggero per le immagini come detto precedentemente.\\
+Una proposta di Lighthouse è quella di inserire \textit{inline} alcune parti di CSS e JS, ma questo andrebbe contro il concetto di separazione di struttura, presentazione e comportamento.\\
+Per essere il più possibile \textit{mobile friendly} abbiamo cercato di dare una misura adatta per l'interazione da schermo alla maggior parte dei bottoni presenti nel nostro sito.
