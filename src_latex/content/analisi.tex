@@ -1,47 +1,36 @@
 \section{Analisi}
 \subsection{Descrizione testuale}
 
-Ci si propone di realizzare un sito web che consensta agli studenti dell'Università di Padova iscritti al Corso di Laurea in Informatica di accedere ad informazioni relative alla propria permanenza nei locali dell'ateneo e ai corsi.\\
-Inoltre si vuole mettere a disposizione un punto dove recuperare informazioni velocemente per gestire la vita al di fuori delle lezioni come ad esempio indicazioni per aule studio.\\
-Questo sito punta a centralizzare le informazioni che si posso recuperare, spesso con fatica, dai vari siti di ateneo e dei dipartimenti.\\
-Proprio per questo particolare attenzione viene posta sull'esperienza da dispotivo mobile, dato che gli studenti sono molto spesso in movimento e sfruttano lo smartphone per risolvere velocemente dei dubbi.\\
-Gli argomenti di cui gli studenti hanno più dubbi, stando a quanto si nota dai vari gruppi universitari, sono:
+Ci si propone di realizzare un sito web che consenta agli studenti dell'Università di Padova, iscritti al Corso di Laurea in Informatica, di accedere ad informazioni relative alla propria permanenza nei locali dell'ateneo e ai corsi.\\
+Si vuole mettere a disposizione una piattaforma dove recuperare informazioni velocemente per gestire la vita al di fuori delle lezioni come ad esempio indicazioni per le aule studio.\\
+Questo sito punta a centralizzare le informazioni che si posso recuperare, spesso a fatica, dai vari siti di ateneo e dei dipartimenti.\\
+Proprio per questo, particolare attenzione viene posta all'esperienza utente da dispotivo mobile, infatti gli studenti sono molto spesso in movimento e sfruttano lo smartphone per ottenere velocemente le risposte di cui hanno bisogno.\\
+Facendo una breve ricerca nei maggiori gruppi universitari, gli argomenti in cui gli studenti hanno più dubbi sono:
 \begin{itemize}
-    \item Informazioni e consigli sui vari corsi e come affrontarli al meglio.
-    \item Informazioni riguardanti edifici e aule.\\ Indirizzi, informazioni sulla presenza di reti wifi e prese di corrente, senza dimenticare le modalità di accesso.
-    \item Utilizzo delle reti wifi. \\ La necessità di una rete buona e stabile è molto sentita da ogni studente, per cui è utile avere una guida su come connettersi alle varie offerte dall'ateneo.   
-    \item Partecipazione allo stage e consegna della tesi. \\ Sono gli ultimi passi della carriere universitaria e le istruzioni sono sparse e nascoste nei vari siti dell'ateneo. L'idea è di centralizzarle e renderle di facile comprensione.
-    \item Quali sono i documenti e gli strumenti utili da avere sempre a portata di mano: il badge universitario, il QR per la mensa e le varie applicazioni UniPD.
+    \item Informazioni e consigli relativi ai vari corsi e come affrontarli al meglio.
+    \item Informazioni riguardanti edifici ed aule. Indirizzi ed informazioni sulla presenza di reti wifi, prese di corrente e le modalità di accesso.
+    \item Utilizzo delle reti wifi. La necessità di una rete buona e stabile è molto sentita da ogni studente, per cui è utile avere una guida su come connettersi alle varie offerte dall'ateneo.   
+    \item Partecipazione allo stage e consegna della tesi, questi sono gli ultimi passi della carriere universitaria. Le istruzioni sono però sparse e nascoste nei vari siti dell'ateneo. L'idea è di centralizzarle e renderle di facile comprensione.
+    \item Documenti e strumenti utili da avere sempre a portata di mano: il badge universitario, il QR per la mensa e le varie applicazioni UniPD.
 \end{itemize}
 
 \subsection{Analisi del target di utenza}
 
 L'utenza sarà principalmente formata da studenti del CdL in Informatica. Data la vicinanza geografica con i dipartimenti di Matematica, Fisica e Ingegneria nulla vieta anche ai loro studenti di visitare il nostro sito per ottenere alcune informazioni utili.\\
-Dall'analisi appena fatta quindi possiamo aspettarci degli utenti consapevoli nell'utilizzo dei loro strumenti, con aggiornamenti frequenti e attuali, curiosi nel provare nuove funzionalità offerte dai software. Per questo il nostro sito potrà utilizzare senza troppi rischi nuovi standard.
-
+Dall'analisi appena fatta quindi possiamo aspettarci degli utenti consapevoli nell'utilizzo dei loro strumenti, con aggiornamenti frequenti e attuali, curiosi nel provare nuove funzionalità offerte dai software. Per questo il nostro sito potrà utilizzare senza troppi rischi nuovi standard.\\
 Il sito permette a tutte le tipologie di ricerca di essere effettuate con
 efficacia:
 \begin{itemize}
-    \item \textbf{Tiro perfetto:} Grazie ad uno schema organizzativo esatto
-        l'utente può raggiungere l'informazione che cerca al primo colpo.
-    \item \textbf{Trappola per aragoste: } Grazie alla suddivisione in
-        sottocategorie sia dei corsi che delle aule studio l'utente può già
-        farsi una idea del contenuto disponibile sul sito grazie alle
-        descrizioni.
-    \item \textbf{Pesca con la rete:} La struttura del sito è particolarmente
-        semplice ed intuitiva, questo permette agli utenti di esporare la
-        totalita del sito senza perdere contenuti o entrare in stato di
-        confusione.
-    \item \textbf{Boa di segnalazione:} Tutte le pagine visibi all'utente
-        utilizzano parametri passaggio di parametri tramite metodo
-        \textit{POST} quindi permettendo di salvare le pagine relative a
-        qualsiasi contenuto.
+    \item \textbf{Tiro perfetto:} Grazie ad uno schema organizzativo esatto l'utente può raggiungere l'informazione che cerca al primo colpo. \footnote{Schema organizzativo dei corsi}
+    \item \textbf{Trappola per aragoste:} Grazie alla suddivisione in sottocategorie sia dei corsi che delle aule studio l'utente può già farsi una idea del contenuto disponibile sul sito grazie alle descrizioni.
+    \item \textbf{Pesca a strascico:} La struttura del sito è particolarmente semplice ed intuitiva, questo permette agli utenti di esplorare la totalità del sito senza perdere contenuti o avere un sovraccarico cognitivo.
+    \item \textbf{Boa di segnalazione:} Tutte le pagine visibi all'utente utilizzano il passaggio di parametri tramite metodo \textit{GET}. Questo permette all'utente di salvare un \textit{bookmark} alle pagine che vuole ricordare.
 \end{itemize}
 
 \subsection{Servizi offerti}
 \begin{itemize}
-    \item \textbf{Login} \\ L'utente può iscriversi per commentare aule studio e corsi per contribuire con le proprie conoscenze ad una globale e distribuita;
-    \item \textbf{Recensioni} \\L'utente deve poter leggere e creare recensioni dei corsi erogati nel Corso di Informatica e delle aule studio;
-    \item \textbf{Stampa microguide} \\ Un utente può salvarsi tramite stampa alcune pagine in modo da poterle visualizzare offline;
-    \item \textbf{Aule studio più vicine} \\ L'utente potrà trovare le aule studio più vicine a sé tramite la geolocalizzazione.
+    \item \textbf{Login} \\ L'utente potrà contribuire iscrivendosi. A login effettuato potrà commentare aule studio e corsi per contribuire alla comunità.
+    \item \textbf{Recensioni} \\ L'utente potrà leggere e creare recensioni relativamente ai corsi erogati e alle aule studio;
+    \item \textbf{Stampa microguide} \\ L'utente potrà stampare le pagine di contenuto in modo organizzato poterle visualizzare offline come microguide;
+    \item \textbf{Aule studio più vicine} \\ L'utente potrà trovare le aule studio più vicine a sé tramite la geolocalizzazione integrata nel suo smartphone.
 \end{itemize}

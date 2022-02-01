@@ -2,84 +2,93 @@
 
 Per la progettazione abbiamo usato una strategia \textit{Mobile First} e \textit{Responsive Web Design}.\\
 L'approccio \textit{Mobile First} ci permette di concentrarci sulla modalità principale di accesso del nostro target di utenza, ovvero quella da mobile in movimento. Questo comporta una struttura dell'informazione chiara e di semplice fruizione.\\
-Invece l'approccio \textit{Responsive Web Design} si basa sul concetto di \textit{media query}, strumenti che ottimizzano la visualizzazione per specifiche dimensioni di dispositivi e vieport.\\
-Dall'analisi dell'utenza possiamo assumere che il sito verrà visitato da browser aggiornati e che quindi supportano le ultime feature degli standard HTML5 e CSS3.\\
+L'approccio \textit{Responsive Web Design} invece si basa sul concetto di \textit{media query}, strumento che ottimizza la visualizzazione per specifiche dimensioni di dispositivi e \textit{viewport}.\\
+Come dalla precedente analisi dell'utenza possiamo desumere che il sito verrà visitato da browser aggiornati e che quindi supportano le ultime \textit{feature} degli standard HTML5 e CSS3.\\
 
 \subsection{Tipi di utente}
 
 \begin{itemize}
     \item \textbf{Utente non registrato:} principale tipologia di utente, potrà solamente fruire del contenuto offerto dal sito e dagli utenti registrati.
-    \item \textbf{Utente registrato:} oltre alle funzionalità di base potrà lasciare recensioni, modifcare le sue recensioni precendetemente lasciate ed eliminarle.
-    \item \textbf{Amministratore:} oltre alle funzionalità disponibili all'utente registrato potrà eliminare le recensioni di tutti gli utenti registrati.
+    \item \textbf{Utente registrato:} oltre alle funzionalità di base potrà offerte all'utente non registrato, esso lasciare recensioni, modifcare quelle scritte precendetemente ed eliminarle.
+    \item \textbf{Amministratore:} oltre alle funzionalità disponibili all'utente registrato, potrà eliminare le recensioni di tutti gli utenti.
 \end{itemize}
 
 \subsection{Struttura del sito}
 
-Il sito presenta molteplici livelli di profondità:
+Il sito presenta una non elevata profondità:
 \begin{itemize}
-    \item \textbf{Home:} Vengono illustrate in breve le funzioni principali del sito.
-    \item \textbf{Corsi:} Vengono elencati i vari corsi del CdL in informatica suddivisi in base all' anno in cui andrebbero seguiti:
+    \item \textbf{Home:} Vengono illustrate in breve le funzioni principali del sito. Il suo scopo principale è quello di \textit{landing page}.
+    \item \textbf{Corsi:} Vengono elencati i vari corsi del CdL in Informatica suddivisi in base all'anno in cui andrebbero seguiti. Questa pagina è stata ottimizzata in modo che l'utente abbia chiare quali sono le risorse disponibili nel nostro sito.
         \begin{itemize}
-            \item \textbf{Corso:} È la pagina dedicata ad un corso nello specifico su di essa si può lasciare e leggere le varie recensioni oltre ad ottenere informazioni, quali una breve descrizione, i CFU e contatto del professore che lo organizza.
+            \item \textbf{Corso:} È la pagina dedicata ad un corso nello specifico. Su di essa è possibile lasciare e leggere le varie recensioni oltre ad ottenere informazioni, quali una breve descrizione, i CFU e contatto del professore che lo organizza. Questa pagina è stata attentamente ottimizzata a livello SEO in modo che tramite i motori di ricerca gli utenti alla ricerca di specifici corsi trovino il nostro sito.
         \end{itemize}
     \item \textbf{Aule:} Vengono elencate le aule studio vicine ai luoghi frequentati dagli studenti del CdL in informatica accompagnati da una breve descrizione e dalla possibilità di ordinarli per distanza tramite geolocalizzazione:
         \begin{itemize}
-            \item \textbf{Aula:} È la pagina dedicata ad un' aula studio nello specifico, essa mette a disposizione delle foto, informazioni sui servizi disponibili e recensioni.
+            \item \textbf{Aula:} È la pagina dedicata ad un'aula studio nello specifico, essa mette a disposizione informazioni sui servizi disponibili, fotografie e recensioni. Anche questa tipologia di pagine è stata altamente ottimizzata a livello SEO per le stesse motivazioni della pagine di tipo corso.
         \end{itemize}
-    \item \textbf{FAQ:} È disponibile una serie di domande frequentemente poste sui vari canali del CdL in informatica accompaganti da risposte.
+    \item \textbf{FAQ:} È disponibile una serie di domande frequentemente poste nei vari canali del CdL accompaganti da risposte curate dagli amministratori.
 \end{itemize}
 
 \subsubsection{Header}
-Nell'header è presente il logo del sito identificato da un tag \textit{h1} per indicare la prima intestazione. Poi a seguire una \textit{navbar} strutturata come \textit{unordered list} che racchiude le varie pagine del sito. Per evitare loop di link, quello della pagina attuale viene sempre rimosso e reso differente dagli altri.
+Nell'header è presente il logo del sito identificato da un tag \texttt{<h1>} per indicare la prima intestazione. A seguire una \texttt{navbar} strutturata come \textit{unordered list} che racchiude le varie pagine visitabili del sito. Per evitare link circolari, quello della pagina attuale viene sempre rimosso e reso chiaramente riconoscibile rispetto agli altri.
 
 \subsubsection{Breadcrumb}
-Per permette agli utenti agevolare la visita del sito e per evitare la dispersione è stata aggiunta una breadcrumb in ogni pagina visitabile. Sfruttando il tag semantico \textit{<nav>} e strutturata tramite una \textit{ordered list} per rispecchiare l'ordine di navigazione. Anche in questo elemento la pagina attuale non è un link attivo per evitare loop. Si è tenuto conto della presenza di \textit{Home} di lingua inglese e inoltre le freccette vengono inserite tramite CSS essendo solamente di presentazione.
+Per agevolare agli utenti la visita del sito e per evitare il disorientamento è stata aggiunta una breadcrumb in ogni pagina visitabile.\\
+Questa sezione di pagina è stata costruita sfruttando il tag semantico \texttt{<nav>}. Viene inoltre strutturata tramite una \textit{ordered list} per rispecchiare l'ordine di navigazione delle pagine. Anche in questo elemento la pagina attuale non è un link attivo sempre per evitare i link circolari.\\
+Si è tenuto conto dell'accessibilità prestando attenzione alle parole di lingua inglese come ad esempio \textit{Home}. Le freccette, essendo di presentazione, vengono inserite tramite CSS.
 
 \subsubsection{Contenuto}
-Per ogni pagina si è cercato di mantenere una struttura semplice che permettesse all'utente di rispondere in modo semplice alle tre domande fondamentali:
+Per ogni pagina si è cercato di mantenere una struttura semplice che permettesse all'utente di rispondere chiaramente e velocemente alle tre domande fondamentali:
     \begin{itemize}
-        \item \textbf{Dove sono?:} domanda a cui è facile rispondere grazie all'header e specialmente alla breadcrumb.
-        \item \textbf{Di cosa si tratta?:} grazie alla struttura semplice e minimale di ogni pagina il contenuto principale salta direttamente all'occhio dell'utente.
-        \item \textbf{Dove posso andare?:} anche qui data la gerarchia su cui si basano le pagine del sito i percorsi sono facilmente intuibili dall'utente. Inoltre sempre grazie alla breadcrumb è possibile farsi un'idea di come risalire le pagine.
+        \item \textbf{Dove sono?} Domanda a cui è facile rispondere grazie all'header e più in dettaglio grazie alla breadcrumb.
+        \item \textbf{Di cosa si tratta?} Grazie all'utilizzo appropriato di tag semantici nella struttura della pagina il contenuto importante salta subito all'occhio e all'orecchio dell'utente.
+        \item \textbf{Dove posso andare?} Anche qui data la gerarchia su cui si basano le pagine del sito, i percorsi sono facilmente intuibili dall'utente. Inoltre, sempre grazie alla breadcrumb, è possibile farsi un'idea di come risalire la struttura del sito.
     \end{itemize}
 Vediamo per ogni pagina come è strutturato il contenuto:
 \begin{itemize}
     \item \textbf{Home} In questa pagina è presente una semplice introduzione allo scopo del sito e tutte le possibili pagine raggiungibili si trovano nell'header
-    \item \textbf{Corsi} Qui sono presenti, suddivisi tramite uno schema esatto (per anno) tramite una \textit{ordered list} che poi si suddivide a sua volta in sottoliste \textit{unordered} dove sono presenti bottoni che agiscono da link verso le specifiche pagine del corso.
+    \item \textbf{Corsi} Qui sono presenti, suddivisi tramite uno schema esatto (per anno) in una \textit{ordered list} che poi si suddivide a sua volta in sottoliste \textit{unordered} dove sono presenti bottoni che agiscono da collegamento verso le specifiche pagine del corso.
     \begin{itemize}
-        \item \textbf{Corso} La pagina del singolo corso mantiene una struttura minimale con all'interno una lista \textit{non ordinata} che contiene le informazioni principali quali referente e contatti, anno e semestre di erogazione. Inoltre è presente il form per inviare la recensione e quelle già presenti, con la media calcolata.
+        \item \textbf{Corso} La pagina del singolo corso mantiene una struttura minimale con all'interno una lista \textit{non ordinata} contenente le informazioni principali quali referente, contatti, anno e semestre di erogazione.\\
+        È presente il form per inviare la recensione. Le recensioni lasciate dagli utenti saranno visibili sotto al predetto form e dai voti assegnati viene dato al corso un voto calcolato tramite media.
     \end{itemize}
-    \item \textbf{Aule} La pagina delle aule presenta una lista di aule \textit{ordered}. Questo perchè è già predisposta per essere ordinata in base alla distanza dall'utente tramite uno script Javascript. Tutte le aule poi sono strutturate in una \textit{css grid} che racchiude le \textit{cards} delle singole aule.
+    \item \textbf{Aule} La pagina delle aule presenta una lista predisposta per essere ordinata in base alla distanza dall'utente tramite uno script in JavaScript. Tutte le aule sono poi presentate in delle \textit{card} disposte tramite una struttura a \texttt{grid} che le racchiude.
     \begin{itemize}
-        \item \textbf{Aula} La pagina dell'aula contiene una galleria di immagini rappresentative. Sono contenute tutte le informazioni interessanti dell'aula quali posti disponibili, posizione e presenza o meno di connessione e possibilità di utilizzare prese di corrente. Anche in queste pagine è possibile lasciare e visualizzare le recensioni.
+        \item \textbf{Aula} La pagina dell'aula contiene una galleria di immagini di contenuto utili per mostrare i luoghi.\\
+        In questa pagina sono contenute tutte le informazioni rilevanti dell'aula quali posti disponibili, posizione, presenza o meno di connessione ad Internet e prese di corrente. Anche in queste pagine è possibile lasciare e visualizzare le recensioni.
     \end{itemize}
-    \item \textbf{FAQ} La pagina delle \textit{FAQ} contiene le \textit{Frequently Asked Question}. Queste sono rappresentate tramite una \textit{definition list}. Questa pagina è principalmente statica in quanto queste risposte sono già ben definite.
-    \item \textbf{Accedi e Registrati} Le due pagine che permettono all'utente di entrare nella community tramite due \textit{form} che sfruttano a pieno i controlli offerti dall'\textit{input HTML5} e i dati inviati vengono poi controllati via Javascript lato client e via PHP lato server.
+    \item \textbf{FAQ} La pagina delle \textit{FAQ} contiene le \textit{Frequently Asked Questions}. Queste sono presentate tramite una \textit{definition list}. Questa pagina è principalmente statica in quanto queste risposte sono già chiaramente definite. Risulta però dinamica per la presenza di header e footer.
+    \item \textbf{Registrati e Accedi} Queste due pagine funzionano in simbiosi l'una con l'altra. Una permette all'utente di entrare a far parte della community, l'altra permette di tornare a contribuire al gruppo.\\
+    Queste due pagine permettono un'interazione tramite \texttt{form} i qualivengono resi sicuri e facili da usare tramite l'implementazione offerti dall'\texttt{input HTML5} e JavaScript lato client, lato server via PHP.
 \end{itemize}
-Sono presenti due pagine aggiuntive non direttamente raggiungibili:
+
+Sono presenti altre pagine di servizio non direttamente raggiungibili:
 \begin{itemize}
-    \item \textbf{Registrazione avvenuta:} serve per rendere consapevole l'utente di aver completato la registrazione e che questa è andata a buon fine.
-    \item \textbf{Errore 404 e 500:} cercano di aiutare l'utente che per errore si è perso portandolo su una pagina strutturata in modo da reindizzarlo verso il nostro sito.
+    \item \textbf{Registrazione avvenuta:} Consapevolizza l'utente di aver completato la registrazione e che essa è andata a buon fine.
+    \item \textbf{Errore 404 e 500:} Appaiono quando avviene un errore, la prima in caso di pagina sconosciuta, la seconda per problemi del server.\\
+    Queste due pagine sono costruire in modo che l'utente si senta rassicurato ed accolto, infatti egli verrà guidato tramite l'\textit{emotional design} verso la sua prossima destinazione valida.\\
+    Particolare attenzione è stata posta nella pagina 404 nel cercare di inferire dove l'utente si trovasse prima di incotrare l'errore.
 \end{itemize}
 
 \subsubsection{Footer}
-All'interno del footer sono stati inseriti solamente i nomi dei componenti del gruppo e le sedi.
+All'interno del footer sono state inserite le informazioni utili in qualsiasi dopo aver visitato tutta la pagina. In questo caso i nomi dei componenti del gruppo e le sedi di produzione.
 
 \subsection{Emotional design}
-Durante la progettazione del sito si è deciso di voler trasmettere un senso di apparteneza ed esclusivtà agli utenti iscritti in modo da spingerli a creare contenuto per aiutare tutti la communitiy.
-Inoltre nelle pagina dell'errore 404 è deciso di utilizzare una battuta in cui gli studenti che hanno visitato almeno una volta Torre Archimede possono identificarsi. Invece per la pagina che gestisce gli errori 500 abbiamo puntato di nuovo su una battuta.
+Durante la progettazione del sito, come precedentemente descritto, abbiamo utilizzato in più punti l'\textit{emotional design}.\\
+Si è deciso di voler trasmettere un senso di apparteneza ed esclusivtà agli utenti iscritti in modo da spingerli a creare contenuto per aiutare tutti la community.
+Nella pagina dell'errore 404 si è deciso di utilizzare una battuta in modo da stemperare l'animo del perduto. Almeno una volta tutti gli studenti di informatica hanno dovuto confrontarsi con il dedalo della Torre Archimede. Invece per la pagina che gestisce gli errori 500 abbiamo puntato di nuovo su una battuta autoironica.
 
 \subsection{Suddivisione del lavoro}
-Purtroppo a causa di foza maggiore dovute allo stato di salute di uno dei membri del gruppo orginale, il progetto è stato svolto da 3 persone. Ci siamo suddivisi il lavoro nel seguente modo.
+Purtroppo a cause di forza maggiore dovute allo stato di salute di uno dei membri del gruppo orginale, il progetto è stato svolto da 3 persone. Ci siamo suddivisi il lavoro come segue:
 
 \begin{itemize}
     \item \textbf{Alessio Ferrarini:}
         \begin{itemize}
             \item Progettazione del sito web;
-            \item Sviluppo dei componenti simil ORM (Object relational mapping) in PHP;
+            \item Sviluppo dei componenti simil ORM (\textit{Object Relational Mapping}) in PHP;
             \item Sviluppo del componente PHP per astrarre la sosituzione nei template HTML;
-            \item Sviluppo degli script PHP che si occupano dell'inserimento e rimozione dei dati tramite l'interfaccia ORM;
-            \item Sviluppo script javascript per l'ordinamento delle aule tramite API di geolocalizzazione;
+            \item Sviluppo degli script PHP che si occupano dell'inserimento e rimozione dei dati utilizzando l'interfaccia ORM;
+            \item Sviluppo di script JavaScript per l'ordinamento delle aule tramite API di geolocalizzazione;
             \item Stesura della relazione;
         \end{itemize}
     \item \textbf{Alessandro Massarenti:}
@@ -97,10 +106,10 @@ Purtroppo a causa di foza maggiore dovute allo stato di salute di uno dei membri
             \item Progettazione del sito web;
             \item Sviluppo del JavaScript dedicato alla comparsa/scomparsa di elementi;
             \item Inserimento dei componenti HTML con attributi aria dedicati all'accessibilità;
-            \item Stesura della realazione;
             \item Realizzazione del codice JavaScript dedicato alla validazione dei form in maniera accessibile;
             \item Test di accessibilità sui componenti, pagine e colori utilizzati;
+            \item Stesura della realazione;
         \end{itemize}
 \end{itemize}
 
-Nostante questa suddivisione, tutti i mebri membri hanno collaborato in tutti gli aspetti della realizzazione del sito soprattutto per quanto riguarda l'accessibiltà di esso.
+Nostante questa suddivisione, tutti i membri hanno collaborato largamente in tutti gli aspetti della realizzazione del sito, particolarmente per quanto riguarda l'accessibiltà di esso.
