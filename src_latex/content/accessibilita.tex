@@ -28,12 +28,13 @@ Si è preso come principale colore uno che rimandi all'ateneo e al dipartimento.
 Non è sembrato necessario modificare l'ordine dei tabindex manualmente. Per come è stato strutturato il sito questi sono già organizzati in modo adeguato.
 
 \subsubsection{Lingue straniere e termini abbreviati}
-Il sito specifica come lingua principale l'italiano. Ogni parola che deve essere letta con pronuncia straniera è stata contrassegnata tramite l'attributo \textit{lang} in un tag di comodo come \textit{span} oppure nel suo tag di appartenza. Ad esempio la semplice parola \textit{Home} nella breadcrumb oppure \textit{stage} nelle FAQ. Inoltre tutte le sigle utilizzate (ad esempio \textit{ESU} ed \textit{ISEE}) sono state inserite all'interno di dei tag \textit{<abbr>}.
+Il sito specifica come lingua principale l'italiano. Ogni parola che deve essere letta con pronuncia straniera è stata contrassegnata tramite l'attributo \textit{lang} in un tag di comodo come \textit{span} oppure nel suo tag di appartenza. Ad esempio la semplice parola \textit{Home} nella breadcrumb oppure \textit{stage} nelle FAQ. Inoltre tutte le sigle utilizzate (ad esempio \textit{ESU} ed \textit{ISEE}) sono state inserite all'interno di dei tag \textit{<abbr>}, contenenti sia l'attributo \textit{title} per espanderle che una \textit{aria-label} per dare un'alternativa in lettura agli screen reader.
 
 \subsection{Strumenti di testing}
 
 Tutte le pagine e i fogli di stile sono state controllate tramite il \href{https://validator.w3.org/}{validatore HTML e CSS} offerto dal W3C.\\
-Durante tutto il ciclo di sviluppo la maggior parte dei controlli è stata fatta tramite i \textit{Firefox Developer Tools} e il software \href{https://developers.google.com/web/tools/lighthouse}{Lighthouse} all'interno del browser Google Chrome.
+Durante tutto il ciclo di sviluppo la maggior parte dei controlli è stata fatta tramite i \textit{Firefox Developer Tools} e il software \href{https://developers.google.com/web/tools/lighthouse}{Lighthouse} all'interno del browser Google Chrome.\\
+Inoltre per alcune simulazioni di disabilità è stata utilizzata l'estensione \textit{Silktide}.
 
 \subsubsection{Ambienti di test}
 Il sito è stato testato su ambiente Linux, Windows e MacOS, sui browser Firefox, Chromium, Google Chrome, Microsoft Edge.\\

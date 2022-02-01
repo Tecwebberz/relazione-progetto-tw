@@ -19,6 +19,10 @@ Inoltre gestisce il \textit{max} e il \textit{placeholder} del campo \textit{Ann
 Nella pagina \textit{aule.php} se il browser dell'utente supporta le API di geolocalizzazione verrà mostrto un bottone per ordinare le varie aule in base alla distanza che verrà anche riportata nella card. Si è deciso di non mostrare il bottone se l'oggetto \textit{navigator} non supporta la funzionalità di geolocalizzazione per non dare la parvenza di escludere parte dell'utenza. Per l'implementazione anche calcoli della distanza su una sfera si è deciso di
 non usare nessuna libreria per rendere il più performante possibile l'applicazione.
 
+\subsubsection{Stampa}
+Per permettere agli utenti di salvare in locale le informazioni presenti nel nostro sito è stato predisposto un foglio di stile aggiuntivo che modifica e adatta la pagina alla stampa, sia digitale in PDF che verso la carta stampata. La maggior parte dei componenti interattivi vengono nascosti per dare la precedenza al contenuto vero e proprio. Viene sostituito il font con uno adatto alla stampa con grazie.\\
+Alcune pagine sono state definite da non stampare dato che non contengono alcun contenuto utile.
+
 \subsection{Back-end}
 
 \subsubsection{Meccanismo di templating}
