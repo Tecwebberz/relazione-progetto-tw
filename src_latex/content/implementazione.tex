@@ -3,46 +3,54 @@
 \subsection{Front-end}
 
 \subsubsection{Script di validazione}
-Per gestire la validazione lato client è stato scritto uno script Javascript che controlla tramite espressioni regolari che i contenuti dei campi dei form siano validi ogni volta che il focus su di loro cambia. Ogni campo ha la sua funzione specifica che analizza adeguatamente il contenuto.\\ Gli errori vengono mostrati tramite una lista non ordinata che viene appesa alla \textit{label} del campo. Per fare in modo che questo nuovo elemento dinamico avesse un significato di \textit{alert} lo script aggiunge quel ruolo ARIA alla lista.
+Per gestire la validazione lato client dei dati immessi dall'utente è stato scritto un JavaScript che li controlla tramite espressioni regolari. I contenuti dei campi del form vengono validati ogni qualvolta il focus su di loro cambia.\\
+Gli errori vengono mostrati all'utente tramite una lista non ordinata che viene appesa alla \textit{label} del campo. Per fare in modo che questo nuovo elemento dinamico abbia un significato di \textit{alert} lo script aggiunge quel ruolo ARIA alla lista.
+Questo script gestisce inoltre il \texttt{max} e il \texttt{placeholder} del campo \textit{Anno di immatricolazione} in modo che siano impostati sull'anno attuale.
 
 \subsubsection{Script di modifica recensione}
-Un utente può modificare o eliminare una recensione, un admin può eliminare qualsiasi recensione. Se l'utente ha i permessi adatti sotto la recensione compaiono due bottoni. Il bottone di modifica invoca uno script Javascript che agisce nel seguente modo:
+Un utente può modificare o eliminare una recensione, un admin può eliminare qualsiasi recensione.\\
+Se l'utente ha i permessi adatti sotto la recensione compaiono due bottoni. Il bottone di modifica invoca uno script che agisce nel seguente modo:
 \begin{enumerate}
     \item Ricava quante modifiche sono attualmente attive per creare poi label uniche.
     \item Comincia a costruire un form di modifica che rispecchia quello di una nuova recensione, estraendo il voto e il testo già presenti.
-    \item Nasconde la recensione che si vuole modificare, eliminando direttamente dalla visualizzazione gli elementi presenti, dato che durante la modifica non devono essere accessibili.
-    \item Se la modifica viene effettuata il form la invia, altrimenti tramite il bottone di annullamento gli elementi precedentemente nascosti vengono resi nuovamente visibili 
+    \item Nasconde la recensione che si vuole modificare, eliminando direttamente dalla visualizzazione gli elementi presenti, dato che durante la modifica non devono poter essere accessibili.
+    \item Se la modifica viene effettuata il form la invia, altrimenti tramite il bottone di annullamento gli elementi precedentemente nascosti vengono resi nuovamente visibili.
 \end{enumerate}
-Inoltre gestisce il \textit{max} e il \textit{placeholder} del campo \textit{Anno di immatricolazione} in modo che siano impostati sull'anno attuale.
+Il secondo bottone invece cancella direttamente la recensione presente.
 
 \subsubsection{Script di ordinamento aule}
-Nella pagina \textit{aule.php} se il browser dell'utente supporta le API di geolocalizzazione verrà mostrto un bottone per ordinare le varie aule in base alla distanza che verrà anche riportata nella card. Si è deciso di non mostrare il bottone se l'oggetto \textit{navigator} non supporta la funzionalità di geolocalizzazione per non dare la parvenza di escludere parte dell'utenza. Per l'implementazione anche calcoli della distanza su una sfera si è deciso di
-non usare nessuna libreria per rendere il più performante possibile l'applicazione.
+Nella pagina \textit{aule.php} se il browser supporta le API di geolocalizzazione verrà mostrato un bottone per ordinarle in base alla distanza dall'utente, che verrà poi riportata in un angolo nella card relativa alla singola aula.\\
+Si è deciso di non mostrare il bottone se l'oggetto \texttt{navigator} non supporta la funzionalità di geolocalizzazione per non dare la parvenza di escludere parte dell'utenza.\\
+Per l'implementazione dei calcoli della distanza su una sfera si è deciso di non usare nessuna libreria per rendere il più performante possibile l'applicazione. Il calcolo viene inoltre effettuato una singola volta per evitare eccessivi consumi di batteria.
 
 \subsubsection{Stampa}
-Per permettere agli utenti di salvare in locale le informazioni presenti nel nostro sito è stato predisposto un foglio di stile aggiuntivo che modifica e adatta la pagina alla stampa, sia digitale in PDF che verso la carta stampata. La maggior parte dei componenti interattivi vengono nascosti per dare la precedenza al contenuto vero e proprio. Viene sostituito il font con uno adatto alla stampa con grazie.\\
-Alcune pagine sono state definite da non stampare dato che non contengono alcun contenuto utile.
+Per permettere agli utenti di salvare offline le informazioni presenti nel nostro sito è stato predisposto un foglio di stile aggiuntivo che modifica e adatta la pagina alla stampa \footnote{Funzione miniguide}, sia digitale in PDF che verso la stampa la carta stampata. La maggior parte dei componenti interattivi vengono nascosti per dare la precedenza al contenuto vero e proprio, il font viene sostituito con uno adatto alla stampa ovvero uno con grazie.\\
+Alcune pagine sono state definite non stampabili dato che non contengono alcun contenuto utile offline e volevamo tenere conto anche dell'aspetto ecologico.
 
 \subsection{Back-end}
 
 \subsubsection{Meccanismo di templating}
-È stato deciso di astrarre il meccanismo di template tramite le classi PHP \textit{TemplateEngine} e \textit{Template} presenti nel file \textit{lib/template.engine.php}, il motivo di questa scelta è stato quello di centralizzare la gestione dei template in modo da permettere a tutti gli sviluppatori di lavorare su template scritti da altri senza problemi, ma soprattutto quello di non mostrare mai agli utenti pagine in cui non sono stati sostituiti tutti i pattern così da non generare mai pagine HTML invalide che potrebbero causare problemi di inacessibilità del sito.
+È stato deciso di astrarre il meccanismo di template tramite le classi PHP \texttt{TemplateEngine} e \texttt{Template} presenti nel file \textit{lib/template.engine.php}, questo per permettere a tutti gli sviluppatori del progetto di lavorare contemporaneamente ed efficientemente ai template scritti da altri senza intoppi.\\
+Speciale attenzione è stata posta nel non mostrare mai agli utenti pagine in cui non siano stati sostituiti tutti i componenti, così da non generare mai pagine HTML non valide che potrebbero causare problemi di inacessibilità al sito oppure errori nella presentazione.
 
 \subsubsection{Connessione al database}
-Si è creata la classe PHP \textit{DatabaseLayer} presente in \textit{lib/databaselayer.php} per astrarre tutte le operazioni sia di connessione/disconnessione al database e di query:
+Si è creata la classe PHP \texttt{DatabaseLayer} presente in \textit{lib/databaselayer.php} per astrarre tutte le operazioni di connessione e disconnessione al database e di query:
 \begin{itemize}
-    \item \textbf{Connessione:} la connessione al db può operare in due modi:
+    \item \textbf{Connessione:} la connessione al database può operare in due modi:
     \begin{itemize}
-        \item Una modalità non persistente in cui la connessione è aperta prima della query e chiusa subito dopo così da rendere meno verboso ed \textit{error prone} tutte le pagine PHP che utilizzano solo una query al database.
-        \item Una modalità persistente tramite il metodo \textit{persist()} che permette di gestite la connessione manualemente e si usa quando la pagina eseguire più di una query.
+        \item Una modalità non persistente in cui la connessione è aperta prima della query e chiusa subito dopo, così da rendere meno verboso ed \textit{error prone} tutte le pagine PHP che utilizzano solo una query al database.
+        \item Una modalità persistente tramite il metodo \texttt{persist()} che permette di gestire la connessione manualemente e si usa quando la pagina deve eseguire più di una query.
     \end{itemize}
-    \item \textbf{Query:} si è deciso di astrarre il meccanismo di query per forzare sempre l'utilizzo dei prepared statement così da prevenire iniezioni SQL.
+    \item \textbf{Query:} si è deciso di astrarre il meccanismo di query per forzare sempre l'utilizzo dei \textit{prepared statement} così da prevenire attacchi informatici quali \textit{SQL Injection}.
 \end{itemize}
 
 \subsubsection{Meccanismo ORM}
-Si è creata una serie di classi presenti in \textit{lib/orm/} per astrarre le operazioni delle varie \textit{entries} nel nel database per garantire una interfaccia uniforme a tutti i programmatori e semplificare la migrazione ad altre tecnologie per basi di dati.\\
-I \textit{Service} contenuti in \textit{lib/orm/services/} astraggono le operazioni eseguibili sulle varie tabelle del database e le varie relazioni. Predono come parametro una istanza di \textit{DatabaseLayer} (\textit{UserService} anche una funzione con cui effettuare l'hash sulle password degli utenti).\\
-I \textit{DTO} contenuti in \textit{lib/orm/dto/} invece forniscono le operazioni necessarie per operare sulle singole \textit{entry} delle varie tabelle e le varie operazioni di validazione dei dati lato back-end, ovviamente togliendo tutti i dati sensibili come hash delle password per evitare potenziali leaks.
+Si è creata una serie di classi presenti in \textit{lib/orm/} per astrarre le operazioni delle varie \textit{entries} nel nel database per garantire una interfaccia uniforme a tutti i programmatori, rendere estensibile il progetto e semplificare la migrazione ad altre tecnologie per basi di dati.
+
+I \texttt{Service} contenuti in \textit{lib/orm/services/} astraggono le operazioni eseguibili sulle varie tabelle del database e le varie relazioni. Questi oggetti prendono come parametro un'istanza di \texttt{DatabaseLayer}, in particolare \texttt{UserService} ha anche una funzione con cui effettuare l'\textit{hashing} delle password degli utenti per garantire una maggiore sicurezza nello stoccaggio dei dati sensibili degli utenti.
+
+I \texttt{DTO} contenuti in \textit{lib/orm/dto/} invece forniscono le operazioni necessarie per operare sulle singole \textit{entry} delle varie tabelle e le varie operazioni di validazione dei dati lato back-end, ovviamente non memorizzando nell'oggetto tutti i dati sensibili, come ad esempio l'hash delle password per evitare potenziali \textit{leaks}.
 
 \subsubsection{Target dei form}
-Dentro la cartella \textit{app} sono presenti tutti i file php che si occupano di gestire i target dei form e quindi l'interazione tra utente e i dati messi a disposizione dell'applicativo.
+Dentro la cartella \textit{app} sono presenti tutti i file PHP che si occupano di gestire i target dei form e quindi l'interazione tra utente e i dati messi a disposizione dell'applicativo.\\
+Questi file si occupano inoltre di eseguire la sanitizzazione dell'input dell'utente, che esso sia malevolo o inconsapevole. Vengono \textit{strippati} i vari tag HTML e tutto il codice che potrebbe causare problemi al processore dei dati.
