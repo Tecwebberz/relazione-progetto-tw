@@ -55,6 +55,11 @@ I \texttt{DTO} contenuti in \textit{lib/orm/dto/} invece forniscono le operazion
 Dentro la cartella \textit{app} sono presenti tutti i file PHP che si occupano di gestire i target dei form e quindi l'interazione tra utente e i dati messi a disposizione dell'applicativo.\\
 Questi file si occupano inoltre di eseguire la sanitizzazione dell'input dell'utente, che esso sia malevolo o inconsapevole. Vengono \textit{strippati} i vari tag HTML e tutto il codice che potrebbe causare problemi al processore dei dati.
 
+\subsubsection{I permessi dei files php}
+Data per noi l'importante questione della sicurezza informatica, abbiamo constatato che fosse ottimale rinforzarla impostando i permessi corretti dei file php.
+
+Questi permessi li abbiamo impostati a 640\footnote{Ovvero: . rw-r-----}, così da proteggere i dati sensensibili all'interno dei suddetti file, come ad esempio le credenziali per collegarsi al database .
+
 \subsubsection{Il database}
 Il database, ha il compito di salvare a lungo termine e rendere velocemente fruibili tutti i dati utilizzati  dalle parti dinamiche del sito. Come descritto nei capitoli superiori queste sono principalmente suddivise in: utenti, commenti, aule studio e corsi.
 Oltre alle categorie di dati principali, abbiamo memorizzato all'interno del database i collegamenti alle immagini con annessi testi alternativi, atti a garantire l'accessibilità anche con il contenuto dinamico.
